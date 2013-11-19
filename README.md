@@ -38,7 +38,6 @@ Instalação e Dependências:
 
     mvn clean jfx:jar
     
-	
     # Obs.: o arquivo gerado estará em:
     # java -jar ${DIR_APP}/target/jfx/app/jcac_server-jfx.jar
     
