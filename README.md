@@ -2,6 +2,7 @@ jcac_server
 ===========
 
 Jogo Cara-A-Cara de forma distribuída.
+
 Implementação no lado [Servidor] utilização websockets e o protocolo JSON.
 
 
@@ -9,11 +10,6 @@ Implementação no lado [Servidor] utilização websockets e o protocolo JSON.
 * Disciplina: Programação Paralela e Distribuída
 * Curso: Engenharia de Computação - IFCE
 
-
-![ScreenShot](https://github.com/gabrieltavaresmelo/jcac_server/raw/master/gui.png)
-
-
-=============================================================
 
 
 Instalação e Dependências:
@@ -40,7 +36,7 @@ Instalação e Dependências:
     
 	
     # Obs.: o arquivo gerado estará em:
-    # java -jar ${DIR_APP}/target/jfx/app/jcac_client-jfx.jar
+    # java -jar ${DIR_APP}/target/jfx/app/jcac_server-jfx.jar
     
 	
 5) Distribuir sua aplicação (Modo nativo):
@@ -66,4 +62,8 @@ Bibliotecas e Tecnologias utilizadas:
 * JSON (Jackson)
 * [ZenJava](http://zenjava.com/javafx/maven/index.html )
 
+
+
+
+![ScreenShot](https://github.com/gabrieltavaresmelo/jcac_server/raw/master/gui.png)
  
