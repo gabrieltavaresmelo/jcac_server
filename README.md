@@ -12,6 +12,10 @@ Implementação no lado [Servidor] utilização websockets e o protocolo JSON.
 
 
 
+![ScreenShot](https://github.com/gabrieltavaresmelo/jcac_server/raw/master/gui.png)
+
+
+
 Instalação e Dependências:
 ----------------------------
 
@@ -62,8 +66,4 @@ Bibliotecas e Tecnologias utilizadas:
 * JSON (Jackson)
 * [ZenJava](http://zenjava.com/javafx/maven/index.html )
 
-
-
-
-![ScreenShot](https://github.com/gabrieltavaresmelo/jcac_server/raw/master/gui.png)
  
