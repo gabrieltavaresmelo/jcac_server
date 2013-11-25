@@ -84,7 +84,8 @@ public class ServerController extends WebSocketServer {
 				this.sendToAll(bundle.toJson());
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e.getMessage());
+//			e.printStackTrace();
 		}
 	}
 
@@ -135,8 +136,8 @@ public class ServerController extends WebSocketServer {
 					usersOn.remove(user);
 					
 					// Envia new bundle com a informacao de encerrar o jogo
-					bundle = new Bundle(Bundle.USER_OUT, user.getName());				
-					this.sendToAll(bundle.toJson());
+					bundle = new Bundle(Bundle.USER_OUT, user.getName());
+					this.sendToAll(bundle.toJson(), conn);	
 					
 					// Envia new bundle com a lista de todos os usuarios
 					bundle = new Bundle(Bundle.LIST_USERS_ON, CollectionUtils.toMap(usersOn));				
@@ -224,7 +225,8 @@ public class ServerController extends WebSocketServer {
 			}
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOG.error(e.getMessage());
+//			e.printStackTrace();
 		}
 		
 //		this.sendToAll(message);
@@ -289,10 +291,23 @@ public class ServerController extends WebSocketServer {
 			con.send(text);
 		}
 	}
+
+	public void close() {
+		try {
+			Bundle bundle = new Bundle(Bundle.SERVER_OUT, "");
+			String message = bundle.toString();
+			sendToAll(message);
+			
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+		}		
+	}
 	
 	@Override
 	public void stop() {
 		try {
+			close();
+			
 			super.stop();
 			instance = null;
 		} catch (IOException | InterruptedException e) {
